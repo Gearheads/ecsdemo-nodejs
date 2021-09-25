@@ -6,6 +6,9 @@ FROM public.ecr.aws/ubuntu/ubuntu:18.04
 # and the testing npms will be included
 ARG NODE=production
 ENV NODE_ENV ${NODE}
+ENV http_proxy <http-proxy>
+ENV https_proxy <https-proxy>
+ENV no_proxy <no-proxy>
 
 # copy package info early to install npms and delete npm command
 WORKDIR /usr/src/app
